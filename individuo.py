@@ -1,4 +1,4 @@
-from constantes import random_value
+from constantes import random_value, sizeCromossomo
 from random import randint
 
 
@@ -11,7 +11,7 @@ class Individuo:
         self.create()
 
     def create(self):
-        for x in range(0, 9):
+        for x in range(0, sizeCromossomo):
             rand = randint(1, 10)
             if (rand >= 5):
                 self.cromossomo.append(True)

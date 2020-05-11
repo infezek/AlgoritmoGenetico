@@ -1,5 +1,5 @@
 from random import randint
-import time
+#import time
 import math
 
 
@@ -11,8 +11,10 @@ def random_value(a, b):
     return randint(a, b)
 
 
-sizeCromossomo = 9
-sizePopulacao = 500
+sizeGeracao = 30
+sizeCromossomo = 16
+sizePopulacao = 50
+sizeFuncao = 65536
 functrinXSize = 2 ** sizeCromossomo
 
 

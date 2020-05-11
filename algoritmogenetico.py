@@ -1,6 +1,6 @@
 from individuo import Individuo
 from populacao import Populacao
-from constantes import function, sizePopulacao, sizeCromossomo, functrinXSize, random_value
+from constantes import function, sizeGeracao, sizePopulacao, sizeFuncao, sizeCromossomo, random_value
 import matplotlib.pyplot as plt
 
 
@@ -75,19 +75,23 @@ class AlgoritmoGenetico:
 
 poppp = Populacao()
 mat = []
-for i in range(0, sizePopulacao):
-    a = AlgoritmoGenetico(poppp, 0.2, 0.2)
+
+for i in range(0, sizeGeracao):
+    a = AlgoritmoGenetico(poppp, 0.8, 0.1)
     poppp = a.getPopulacao()
 
 
 b = poppp.getPopulacao()
 x = []
 y = []
-for i in range(0, sizePopulacao):
-    valueInt = b[i].getInt()
+for i in range(0, sizeFuncao):
     mat.append(function(i))
+
+for ii in range(0, sizePopulacao):
+    valueInt = b[ii].getInt()
     x.append(function(valueInt))
     y.append(valueInt)
+
 
 plt.scatter(y, x, label='Pontos', color='r', marker='.', s=20)
 plt.legend()
